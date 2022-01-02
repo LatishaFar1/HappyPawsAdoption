@@ -38,3 +38,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* #NAVBAR  */
+.button.is-primary{
+ background-color: #6CBF84;
+};
+
+/* PETSCARD */
+
+
+.submitButtons{
+  background-color: #6CBF84;
+  color: white;
+}
