@@ -37,6 +37,7 @@ function App() {
 
        <NavBar />
        
+       <Home user={user}/>
        {/* path="/login" */}
        <LogIn setUser={setUser}/>
        {/* path="/signup" */}

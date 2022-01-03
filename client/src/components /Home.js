@@ -1,11 +1,21 @@
-export default function Home(){
+export default function Home({user}){
 
-    return(
-        <>
+    
+        
         <h1>
-        test </h1>
-        </>
-    )
+        home test </h1>
+
+        if (user) {
+            return <h1>Hi {user.username}</h1>;
+        } else {
+            return <h1>Login or Signup</h1>
+
+            // Link to signup
+        }
+
+
+    
+    
 
 
 };
