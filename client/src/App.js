@@ -20,13 +20,7 @@ function App() {
     })
   }, [])
 
-  // useEffect(() => {
-  //   fetch("/login").then((response) => {
-  //     if (response.ok){
-  //       response.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
+  
 
   return (
     <div className="App">
@@ -42,8 +36,8 @@ function App() {
        <LogIn setUser={setUser}/>
        {/* path="/signup" */}
        <SignUp setUser={setUser}/>
-       {/* <Home/>
-      <Pets pets={pets}/> */}
+      
+      <Pets pets={pets}/>
     </div>
   );
 }

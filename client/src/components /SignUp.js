@@ -10,7 +10,7 @@ function SignUp({setUser}){
 
     function handleSubmit(e){
       e.preventDefault();
-      fetch("/signup", {
+      fetch("/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function SignUp({setUser}){
                   </div>
 
                   <div className="pt-1 mb-4">
-                    <button className="btn btn-dark btn-lg btn-block" type="button">Sign Up</button>
+                    <button className="btn btn-dark btn-lg btn-block" type="submit">Sign Up</button>
                   </div>
 
             

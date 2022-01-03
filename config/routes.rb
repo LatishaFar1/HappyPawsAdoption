@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get "/pets", to: "pets#index"
   get "/pets/:id", to: "pets#show"
 
-
   scope :api do 
     resources :favorites
     resources :pets, only: [:index, :show]
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
+   
     post "/signup", to: "users#create"
   
   end 

@@ -1,10 +1,12 @@
-export default function Home({user}){
+import Login from "./LogIn";
 
-    
+function Home({user}){
+
+       
         
         <h1>
         home test </h1>
-
+  
         if (user) {
             return <h1>Hi {user.username}</h1>;
         } else {
@@ -12,10 +14,12 @@ export default function Home({user}){
 
             // Link to signup
         }
-
+        
 
     
     
 
 
 };
+
+export default Home;
