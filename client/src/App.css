@@ -1,9 +1,8 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-@import '~mdb-ui-kit/css/mdb.min.css';
 .App {
   text-align: center;
 }
 
+@import '~mdb-ui-kit/css/mdb.min.css';
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,22 +36,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-/* #NAVBAR  */
-.button.is-primary{
- background-color: #6CBF84;
-};
-
-/* PETSCARD */
-
-
-.submitButtons{
-  background-color: #6CBF84;
-  color: white;
-}
-
-/* Login */
-.field{
-  
 }

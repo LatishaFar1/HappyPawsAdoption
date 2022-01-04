@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get "/pets", to: "pets#index"
-  get "/pets/:id", to: "pets#show"
+  
 
   scope :api do 
     resources :favorites
-    resources :pets, only: [:index, :show]
+    resources :pets, only: [:index, :show, :create, :update, :destroy]
     resources :users
     
     post "/login", to: "sessions#create"

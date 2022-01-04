@@ -1,40 +1,36 @@
-import {useState} from 'react';
+import React from 'react'
+import {useState} from "react";
 
-function SignUp({setUser}){
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+export default function SignUp({setUser}) {
 
-
-
-
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+  
+  
 
     function handleSubmit(e){
-      e.preventDefault();
-      fetch("/api/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password 
-        }),
-      })
-      .then((response) => {
-        if (response.ok) {
-          response.json().then((user) => setUser(user));
-        }
-      });
-    }
-
-    return(
-        <>
-     
+        e.preventDefault();
+        fetch("/api/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password 
+          }),
+        })
+        .then((response) => {
+          if (response.ok) {
+            response.json().then((user) => setUser(user));
+          }
+        });
+      }
 
 
-
-
-<section className="vh-100" style={{backgroundColor: '#874E4C'}}>
+    return (
+        <div>
+            <section className="vh-100" style={{backgroundColor: '#874E4C'}}>
   <div className="container py-5 h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col col-xl-10">
@@ -60,7 +56,7 @@ function SignUp({setUser}){
                   <h5 className="fw-normal mb-3 pb-3" style={{letterSpacing: "1px"}}>Sign up for an account</h5>
 
                   <div className="form-outline mb-4">
-                    <input type="text"  name="username" value={username} onChange={(e) => setUsername(e.target.value)}    id="form2Example17" class="form-control form-control-lg" />
+                    <input type="text"  name="username" value={username} onChange={(e) => setUsername(e.target.value)}    id="form2Example17" className="form-control form-control-lg" />
                     <label className="form-label" htmlFor="form2Example17">username</label>
                   </div>
 
@@ -84,12 +80,6 @@ function SignUp({setUser}){
     </div>
   </div>
 </section>
-
-        
-        </>
-    );
-
-
-};
-
-export default SignUp;
+        </div>
+    )
+}
