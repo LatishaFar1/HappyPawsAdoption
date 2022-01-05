@@ -1,12 +1,13 @@
 import React from 'react'
 import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp({setUser}) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
   
-  
+    let navigate = useNavigate();
 
     function handleSubmit(e){
         e.preventDefault();
@@ -23,6 +24,7 @@ export default function SignUp({setUser}) {
         .then((response) => {
           if (response.ok) {
             response.json().then((user) => setUser(user));
+            navigate("/");
           }
         });
       }

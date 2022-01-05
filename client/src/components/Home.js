@@ -4,7 +4,9 @@ export default function Home({user}) {
 
 
             if (user) {
-                return  <h1>Welcome {user.username} to Happy Paws Adoption!
+                return  <h1>Hi {user.username}! 
+                <br/>
+                Welcome to Happy Paws Adoption!
                 <br/>
                 <br/>
                 Check out our pets! 🐕  🐈  🐢

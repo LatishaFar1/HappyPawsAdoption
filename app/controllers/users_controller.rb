@@ -14,9 +14,6 @@ class UsersController < ApplicationController
         render json: User.find(session[:user_id], status: :ok)
     end
 
-    def favorite 
-        
-    end
 
     private
 

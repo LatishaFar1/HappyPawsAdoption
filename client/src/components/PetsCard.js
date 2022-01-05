@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PetsCard({pets, pet, handleDelete}) {
+export default function PetsCard({pets, pet, likes, handleUpdate, handleDelete, setPets}) {
 
 
   function deletePet(id){
@@ -14,9 +14,17 @@ export default function PetsCard({pets, pet, handleDelete}) {
   }
 
 
-  function favoritePet(){
-
-
+  function favoritePet(id){
+    const newLike = likes + 1 
+   fetch(`api/pets/${id}`, {
+     method: "PATCH",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify({like: newLike}),
+   })
+   .then((response) => response.json())
+   .then(handleUpdate);
   }
 
 
@@ -45,8 +53,9 @@ export default function PetsCard({pets, pet, handleDelete}) {
   <div className="card-body">
     
 
-    <button className="btn btn-dark btn-lg btn-block">Favorite:
-     {pet.favorite} </button>
+    <button className="btn" onClick={() => favoritePet(pet.id)}>Favorite:
+      {pet.likes}
+     </button>
 
 
     <button className="btn btn-dark btn-lg btn-block" onClick={() => deletePet(pet.id)}>Delete</button>

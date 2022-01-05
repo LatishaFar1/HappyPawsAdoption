@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
 
   scope :api do 
-    resources :favorites
+    resources :favorites, only: [:update]
     resources :pets, only: [:index, :show, :create, :update, :destroy]
     resources :users
     

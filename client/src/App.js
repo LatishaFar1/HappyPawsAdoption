@@ -33,6 +33,13 @@ function App() {
     );
   }
 
+  function handleUpdate(updatedPet){
+    setPets((pets) => 
+    pets.map((pet) => {
+      return pet.id ===updatedPet.id ? updatedPet : pet;
+    }))
+  }
+
 
   return (
     <div className="App">
@@ -46,7 +53,7 @@ function App() {
 
       <Route path="/signup" element={<SignUp setUser={setUser}/>}/>
 
-      <Route path="/pets" element={<Pets pets={pets} handleDelete={handleDelete} />}/>
+      <Route path="/pets" element={<Pets pets={pets} handleUpdate={handleUpdate} handleDelete={handleDelete} />}/>
 
      
       </Routes>

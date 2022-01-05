@@ -8,7 +8,7 @@ export default function Pets({pets, handleDelete}) {
         <br/>
         <br/>
     { pets.map(pet => 
-    <PetsCard pet={pet} key={pet.id} handleDelete={handleDelete}/>)}
+    <PetsCard pet={pet} key={pet.id} likes={pet.likes} handleDelete={handleDelete}/>)}
         </div>
     )
 }
