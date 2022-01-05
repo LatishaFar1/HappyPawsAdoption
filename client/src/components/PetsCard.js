@@ -8,11 +8,16 @@ export default function PetsCard({pets, pet, handleDelete}) {
       method: "DELETE",
     }).then((response) => {
       if (response.ok){
-        handleDelete(pets)
+        handleDelete(pet)
       }
     });
   }
 
+
+  function favoritePet(){
+
+
+  }
 
 
     return (
@@ -34,14 +39,17 @@ export default function PetsCard({pets, pet, handleDelete}) {
     </p>
   </div>
   <ul className="list-group list-group-flush">
-    <li className="list-group-item">Take me home:</li>
+    {/* <li className="list-group-item">Take me home:</li> */}
     
   </ul>
   <div className="card-body">
     
-    MESSAGE
-    <button className="btn btn-dark btn-lg btn-block">Favorite</button>
-    <button className="btn btn-dark btn-lg btn-block" onClick={deletePet}>Delete</button>
+
+    <button className="btn btn-dark btn-lg btn-block">Favorite:
+     {pet.favorite} </button>
+
+
+    <button className="btn btn-dark btn-lg btn-block" onClick={() => deletePet(pet.id)}>Delete</button>
   </div>
 </div>
 </div>
