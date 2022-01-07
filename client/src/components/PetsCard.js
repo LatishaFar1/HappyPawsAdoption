@@ -16,7 +16,7 @@ export default function PetsCard({pets, pet, likes, handleUpdate, handleDelete, 
 
   function favoritePet(id){
     const newLike = likes + 1 
-   fetch(`api/favorites/${id}`, {
+   fetch(`api/pets/${id}`, {
      method: "PATCH",
      headers: {
        "Content-Type": "application/json",
@@ -54,9 +54,9 @@ export default function PetsCard({pets, pet, likes, handleUpdate, handleDelete, 
     
 
     <button className="btn" onClick={() => favoritePet(pet.id)}>Favorite:
-      {pet.likes}
      </button>
-
+     <div className="btn">{pet.likes}</div>
+   
 
     <button className="btn btn-dark btn-lg btn-block" onClick={() => deletePet(pet.id)}>Delete</button>
   </div>
