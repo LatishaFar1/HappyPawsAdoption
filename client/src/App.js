@@ -53,6 +53,7 @@ function App() {
 
       <Route path="/signup" element={<SignUp setUser={setUser}/>}/>
 
+      
       <Route path="/pets" element={<Pets pets={pets} handleUpdate={handleUpdate} handleDelete={handleDelete} />}/>
 
      

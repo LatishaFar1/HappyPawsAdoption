@@ -16,12 +16,12 @@ export default function PetsCard({pets, pet, likes, handleUpdate, handleDelete, 
 
   function favoritePet(id){
     const newLike = likes + 1 
-   fetch(`api/pets/${id}`, {
+   fetch(`api/favorites/${id}`, {
      method: "PATCH",
      headers: {
        "Content-Type": "application/json",
      },
-     body: JSON.stringify({like: newLike}),
+     body: JSON.stringify({likes: newLike}),
    })
    .then((response) => response.json())
    .then(handleUpdate);

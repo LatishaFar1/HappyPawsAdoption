@@ -17,7 +17,9 @@ class PetsController < ApplicationController
 
     def update
         pet = Pet.find_by(id: params[:id])
-        pet.update(pet_params)
+        pet.update(
+            likes:params[:likes].to_i
+        )
         render json: pet
     end 
 

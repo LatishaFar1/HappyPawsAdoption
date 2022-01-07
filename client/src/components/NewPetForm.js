@@ -29,7 +29,7 @@ export default function NewPetForm({handleAddPet}) {
             },
             body: JSON.stringify(formInfo),
         })
-        .then((response) => response.json)
+        .then((response) => response.json())
         .then((newPet) => {
             setFormInfo({});
             handleAddPet(newPet)
