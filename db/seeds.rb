@@ -10,16 +10,19 @@
 pets1 = Pet.create(name: "Dove", 
 age: 1, 
 image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*",
-description: "Dove is a happy go lucky puppy that loves to go on long walks")
+description: "Dove is a happy go lucky puppy that loves to go on long walks",
+likes: 2)
 
 pets2 = Pet.create(name: "Spot",
 age: 3,
 image: "https://i.insider.com/5484d9d1eab8ea3017b17e29?width=600&format=jpeg&auto=webp",
-description: "Spot is fully potty-trained and ready to join a high-energy household.")
+description: "Spot is fully potty-trained and ready to join a high-energy household.",
+likes: 3)
 
 pets3 = Pet.create(name: "Tom and Jerry", 
 age: 1,
 image: "https://media.nature.com/lw800/magazine-assets/d41586-020-01430-5/d41586-020-01430-5_17977552.jpg",
-description: "These two are a package deal. They go everywhere together and are happiest when they aren't around too many children.")
+description: "These two are a package deal. They go everywhere together and are happiest when they aren't around too many children.",
+likes: 4)
 
 puts "seeded."

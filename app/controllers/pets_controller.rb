@@ -15,13 +15,13 @@ class PetsController < ApplicationController
         render json: pet
     end 
 
-    def update
-        pet = Pet.find_by(id: params[:id])
-        pet.update(
-            likes:params[:likes].to_i
-        )
-        render json: pet
-    end 
+    # def update
+    #     pet = Pet.find_by(id: params[:id])
+    #     pet.update(
+    #         likes:params[:likes].to_i
+    #     )
+    #     render json: pet
+    # end 
 
 
     def destroy 

@@ -15,6 +15,7 @@ function App() {
 
   const [pets, setPets] = useState([]);
   const [user, setUser] = useState(null);
+ 
 
   useEffect(() => {
     fetch('api/pets/')
@@ -33,12 +34,9 @@ function App() {
     );
   }
 
-  function handleUpdate(updatedPet){
-    setPets((pets) => 
-    pets.map((pet) => {
-      return pet.id ===updatedPet.id ? updatedPet : pet;
-    }))
-  }
+
+
+ 
 
 
   return (
@@ -54,7 +52,7 @@ function App() {
       <Route path="/signup" element={<SignUp setUser={setUser}/>}/>
 
       
-      <Route path="/pets" element={<Pets pets={pets} handleUpdate={handleUpdate} handleDelete={handleDelete} />}/>
+      <Route path="/pets" element={<Pets pets={pets} handleDelete={handleDelete} />}/>
 
      
       </Routes>

@@ -21,10 +21,10 @@ class FavoritesController < ApplicationController
 
 
     def update 
-        if logged_in?
-            favorite = Favorite.find_by(user_id: current_user.id, pet_id: params[:pet_id])
+        if !logged_in?
+            favorite = Favorite.find_by(user_id: current_user.id, pet_id:params[:pet_id])
             if favorite 
-                if favorite.update(likes: params[:likes])
+                if favorite.update(likes:params[:likes])
                     render json: favorite, status: :ok 
             else 
                 render json: favorite.errors.full_messages, status: :unprocessable_entity
@@ -34,6 +34,9 @@ class FavoritesController < ApplicationController
              render json: {errors: ["Favorite doesn't exist"]}, status: :unprocessable_entity
         end 
     end 
+
+  
+
 
     def destroy 
         if logged_in?
@@ -45,7 +48,7 @@ class FavoritesController < ApplicationController
 
 
     def fav_params
-        params.permit(:likes)
+        params.permit(:likes, :id)
     end 
 
 end
