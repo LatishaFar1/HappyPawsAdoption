@@ -34,7 +34,13 @@ function App() {
     );
   }
 
-
+  function handleUpdate(e, updatedPet){
+    e.preventDefault();
+    setPets((pets) => 
+    pets.map((pet) => {
+      return pet.id ===updatedPet.id ? updatedPet : pet;
+    }))
+  }
 
  
 
@@ -52,7 +58,7 @@ function App() {
       <Route path="/signup" element={<SignUp setUser={setUser}/>}/>
 
       
-      <Route path="/pets" element={<Pets pets={pets} handleDelete={handleDelete} />}/>
+      <Route path="/pets" element={<Pets handleUpdate={handleUpdate} pets={pets} handleDelete={handleDelete} />}/>
 
      
       </Routes>

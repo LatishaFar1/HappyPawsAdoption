@@ -16,17 +16,18 @@ export default function PetsCard({pet, likes, handleUpdate, handleDelete, setPet
 
   //FAVORITES 
 
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
-    fetch('api/favorites/')
-    .then(response => response.json())
-    .then(favsData => {
-      setFavorites([...favsData])
-    })
-  }, []);
+  // useEffect(() => {
+  //   fetch('api/favorites/')
+  //   .then(response => response.json())
+  //   .then(favsData => {
+  //     setFavorites([...favsData])
+  //   })
+  // }, []);
 
-  // function handleUpdate(updatedFav){
+  // function handleUpdate(updatedFav, e){
+  //   e.preventDefault();
   //   setFavorites((favorites) => 
   //   favorites.map((favorite) => {
   //     return favorites.id === updatedFav.id ? updatedFav : favorite;
@@ -51,32 +52,33 @@ export default function PetsCard({pet, likes, handleUpdate, handleDelete, setPet
   //  .then(handleUpdate);
   // }
 
-  // function favoritePet(id){
-  //   const newLike = likes + 1 
-  //  fetch(`api/pets/${id}`, {
-  //    method: "PATCH",
-  //    headers: {
-  //      "Content-Type": "application/json",
-  //    },
-  //    body: JSON.stringify({likes: newLike}),
-  //  })
-  //  .then((response) => response.json())
-  //  .then(handleUpdate);
-  // }
-  
-  
-  function favoritePet(pet_id, favorite){
-    let newLike =  likes + 1
-   fetch(`api/favorites/${pet.id}`, {
+  function favoritePet(id){
+    const newLike = likes + 1 
+   fetch(`api/pets/${id}`, {
      method: "PATCH",
      headers: {
        "Content-Type": "application/json",
      },
-     body: JSON.stringify({likes: newLike, pet_id}),
+     body: JSON.stringify({likes: newLike}),
    })
    .then((response) => response.json())
-  
+   .then(handleUpdate);
   }
+  
+  
+  // function favoritePet(pet_id, favorite){
+  //   let newLike =  (likes + 1);
+  //  fetch(`api/favorites/${pet.id}`, {
+  //    method: "PATCH",
+  //    headers: {
+  //      "Content-Type": "application/json",
+  //    },
+  //    body: JSON.stringify({likes: newLike, pet_id}),
+  //  })
+  //  .then((response) => response.json())
+  //  .then(handleUpdate)
+  
+  // }
 
   // function handleFavUpdates(favorites)
 
@@ -106,10 +108,10 @@ export default function PetsCard({pet, likes, handleUpdate, handleDelete, setPet
   <div className="card-body">
     
 
-    <button className="btn" onClick={() => favoritePet(favorites.id)}>Favorite:
+    <button className="btn" onClick={(e) => favoritePet(pet.id)}>Favorite:
      </button>
     
-     <div className="btn btn-dark btn-lg btn-block">{favorites.likes}</div>
+     <div className="btn btn-dark btn-lg btn-block">{pet.likes}</div>
    
 
     <button className="btn btn-dark btn-lg btn-block" onClick={() => deletePet(pet.id)}>Delete</button>
