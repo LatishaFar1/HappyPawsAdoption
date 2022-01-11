@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Happy Paws Adoption 
 
-Things you may want to cover:
+Built with Ruby on Rails + React 
 
-* Ruby version
+Allows users to:
+ Sign up and login, and logout, to the website
+ Create, Read, Update, and Delete new Pets
+ Like Pets
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## DEMO: 
+https://youtu.be/XHK-9cfhnDk 

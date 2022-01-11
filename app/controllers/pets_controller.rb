@@ -1,7 +1,12 @@
 class PetsController < ApplicationController
 
     def index 
-        pets = Pet.all 
+        pets = Pet.all
+        render json: pets 
+    end 
+
+    def less_than
+       pets = Pet.less_than
         render json: pets 
     end 
 
