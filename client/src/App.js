@@ -42,8 +42,26 @@ function App() {
     }))
   }
 
- 
 
+    useEffect(() => {
+      fetch("api/me")
+      .then((response) => {
+        if (response.ok ){
+          response.json()
+          .then((user) => setUser(user));
+        }
+      })
+    }, []);
+
+    useEffect(() => {
+      fetch("api/youngest")
+      .then((response) => {
+        if (response.ok){
+          response.json()
+         .then(data => console.log(data))
+        }
+      })
+    })
 
   return (
     <div className="App">
